@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  ADBMusicTransfer
+
+  Created by 桃源老師 on 2025/06/02.
+  
+*/
+
+"File" = "ファイル";
+"NewWindow" = "新規ウインドウ";
+"ADBPathLabel" = "以下のパスにADBが見つかりました:\n %@";
+"Unknown" = "不明";
+"Button.Select ADB manually" = "ADBを手動選択";
+"Button.Confirm ADB Devices" = "ADBの接続確認";
+"Picker.StorageType" = "音楽ファイルを転送するストレージタイプ:";
+"InternalStorage" = "内部ストレージ";
+"SDCard" = "SDカード";
+"Toggle.NewArtist" = "新しいアーティストとして追加";
+"TextField.Artist" = "アーティスト";
+"TextField.Album" = "アルバム";
+"Button.TransferMusic" = "音楽ファイルを転送";
+"Text.Log" = "出力欄";
+"adb does not exist" = "adbが見つかりません";
+"Base music path is invalid." = "音楽フォルダのベースパスが無効です";
+"Can't obtain SD card UUID" = "SDカードのUUIDが取得できません";
+"Can't find library-url, or can't convert to URL.\n" = "❌ library-url が見つからない、または URL に変換できません\n";
+"Can't find music file：" = "音楽ファイルが見つかりません： %@";
+"ADB OUTPUT:\n" = "ADB出力:\n";
+"StartTransfer" = "--- 転送開始 ---";
+"Souce:" = "ソース: %@";
+"Target:" = "ターゲット: %@";
+"adb start failed:" = "adb起動失敗: %@";
+"TransferFailed" = "--- ⚠️ 転送失敗 ---";
+"TransferSucceeded" = "--- ✅ 転送成功 ---";
+"Can't convert ADB output to string\n" = "ADB出力を文字列に変換できませんでした\n";
+"ADB Output:" = "ADB出力: %@";
+"adb execution failed:" = "adb実行失敗: %@";
+"Choose installed ADB" = "ADB の場所を選択してください";
+"Choose" = "選択";

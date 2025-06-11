@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/*
+ Help Style Sheet for index Page
+ */
+
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    margin: 40px;
+    /* background-color: #f9f9f9; */
+    /* color: #333; */
+}
+
+h1, h2 {
+    color: #005fcc;
+}
+
+code {
+  font-family: SFMono-Regular, Consolas, Menlo, monospace;
+  font-size: 0.95em;
+  white-space: pre-wrap;
+  /* 背景色・パディング・ボーダー削除 */
+}
+
+.section {
+    margin-bottom: 40px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ADBMusicTransfer ヘルプ</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex">
+    <meta name="AppleTitle" content="jp.miyamura.ADBMusicTransfer.help">
+    <meta name="AppleIcon" content="../shrd/icon_16x16.png">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="../shrd/sty/index.css"/>
+</head>
+<body>
+
+    <h1><img src="../shrd/icon_128x128.png" alt="ADBMusicTransfer icon" width="128" height="128"><br>
+    ADBMusicTransfer ヘルプ</h1>
+
+    <div class="section">
+        <h2>1. ADBの入手とインストール</h2>
+        <p>
+            アプリの利用には、<strong>ADB (Android Debug Bridge)</strong> が必要です。以下の手順でインストールしてください。
+        </p>
+        <ol>
+            <li>
+                <a href="https://developer.android.com/tools/releases/platform-tools" target="_blank">
+                    Android SDK Platform-Tools
+                </a>からADBをダウンロードします。
+            </li>
+            <li>zipを展開し、パスの通ったディレクトリ（例: <code>/usr/local/bin</code>）に<code>adb</code>を配置します。</li>
+            <li>ターミナルで <code>adb devices</code> を実行して動作確認します。</li>
+        </ol>
+        <p>Androidデバイス側では、USBデバッグが有効になっている必要があります。</p>
+    </div>
+
+    <div class="section">
+        <h2>2. UI部品の説明</h2>
+        <ul>
+            <li><strong>ADBを手動選択</strong> – Macにインストールされたadbを手動で選択する事ができます。（通常は、アプリ起動時に自動検出します）</li>
+            <li><strong>ADBの接続確認</strong> – デバイスが接続されているか確認します。</li>
+            <Li><strong>音楽ファイルを転送するストレージタイプ:</strong> – 音楽ファイルを転送するAndroidデバイス側のストレージを選択できます。</li>
+            <Li><strong>アーティスト</strong> – アーティスト名を入力するテキストフィールドです。（サジェスチョン機能があります）</li>
+            <Li><strong>新しいアーティストとして追加</strong> – 新規アーティストの時チェックします。</li>
+            <Li><strong>アルバム</strong> – アルバム名を入力するテキストフィールドです。（サジェスチョン機能があります）</li>
+            <li><strong>音楽ファイルを転送</strong> – 選択された音楽フォルダを Android に転送します。</li>
+            <li><strong>出力欄</strong> – 実行結果やエラーを表示します。</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. サジェスチョン機能</h2>
+        <p>アーティスト名およびアルバム名の入力時に、自動補完の候補が表示されます。</p>
+        <ul>
+            <li>候補は入力文字に応じてリアルタイムに表示されます。</li>
+            <li>入力が貼り付けで行われた場合、サジェスチョンは表示されません。</li>
+            <li>候補が1つだけのときは、自動で入力が確定されます。</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. 音楽転送について</h2>
+        <p>
+            転送には <code>adb push</code> コマンドを使用しています。選択したアーティスト・アルバムの音楽フォルダをデバイスにコピーします。
+        </p>
+        <p>
+            転送が成功した場合は「✅ 成功」、失敗時は「⚠️ エラー」が出力欄に表示されます。
+        </p>
+    </div>
+
+</body>
+</html>

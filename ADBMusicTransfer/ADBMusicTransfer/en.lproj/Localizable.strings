@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  ADBMusicTransfer
+
+  Created by 桃源老師 on 2025/06/02.
+  
+*/
+
+"File" = "File";
+"NewWindow" = "New Window";
+"ADBPathLabel" = "Found ADB in the follwing Path:\n %@";
+"Unknown" = "Unknown";
+"Button.Select ADB manually" = "Select ADB manually";
+"Button.Confirm ADB Devices" = "Confirm ADB Connection";
+"Picker.StorageType" = "Storage Type to transfer Music files:";
+"InternalStorage" = "InternalStorage";
+"SDCard" = "SDCard";
+"Toggle.NewArtist" = "Add files as New Artist";
+"TextField.Artist" = "Artist";
+"TextField.Album" = "Album";
+"Button.TransferMusic" = "Transfer Music";
+"Text.Log" = "Log";
+"adb does not exist" = "adb does not exist";
+"Base music path is invalid." = "Base music path is invalid.";
+"Can't obtain SD card UUID" = "Can't obtain SD card UUID";
+"Can't find library-url, or can't convert to URL.\n" = "❌ Can't find library-url, or can't convert to URL.\n";
+"Can't find music file:" = "Can't find music file： %@";
+"ADB OUTPUT:\n" = "ADB OUTPUT:\n";
+"StartTransfer" = "--- Start Transfer ---";
+"Souce:" = "Souce: %@";
+"Target:" = "Target: %@";
+"adb start failed:" = "adb start failed: %@";
+"TransferFailed" = "--- Transfer Failed ---";
+"TransferFailed" = "--- ⚠️ Transfer Failed ---";
+"TransferSucceeded" = "--- ✅ Transfer Succeeded ---";
+"Can't convert ADB output to string\n" = "Can't convert ADB output to string\n";
+"ADB Output:" = "ADB Output: %@";
+"adb execution failed:" = "adb execution failed: %@";
+"Choose installed ADB" = "Choose installed ADB";
+"Choose" = "Choose";

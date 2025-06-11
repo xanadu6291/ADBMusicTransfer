@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ADBMusicTransfer Help</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex">
+    <meta name="AppleTitle" content="jp.miyamura.ADBMusicTransfer.help">
+    <meta name="AppleIcon" content="../shrd/icon_16x16.png">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="../shrd/sty/index.css"/>
+</head>
+<body>
+
+    <h1><img src="../shrd/icon_128x128.png" alt="Paranoia2mp3 icon" width="128" height="128"><br>
+    ADBMusicTransfer Help</h1>
+
+    <div class="section">
+        <h2>1. Getting ADB and installing ADB</h2>
+        <p>
+            This apprication requires <strong>ADB (Android Debug Bridge)</strong> to run. Install it with the following procedure: 
+        </p>
+        <ol>
+            <li>
+                Download ADB from the link: <a href="https://developer.android.com/tools/releases/platform-tools" target="_blank">
+                    Android SDK Platform-Tools
+                </a>
+            </li>
+            <li>Unzip the file, and place <code>adb</code> into the PATH passed directory(Ex: <code>/usr/local/bin</code>)</li>
+            <li>Check your adb with <code>adb devices</code> in Terminal.app.</li>
+        </ol>
+        <p>USB debug must be enabled on your Android device.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. UI Parts</h2>
+        <ul>
+            <li><strong>Select ADB Manually</strong> - Can select adb on your Mac manually. (Nomally, the app detects adb aautomatically.)</li>
+            <li><strong>Confirm ADB Connection</strong> - Confirm Android device and your Mac connection.</li>
+            <Li><strong>Storage Type to transfer Music files:</strong> - Can choose strage type to transfer music files on youre Andrroid device.</li>
+            <Li><strong>Airtist</strong> - Text field to input Airtist name. (Have suggestions)</li>
+            <Li><strong>Add files as New Artist</strong> - Checkbox to treat airtist as new airtist.</li>
+            <Li><strong>Album</strong> - Text field to input Album name. (Have suggestions)</li>
+            <li><strong>Transfer Music</strong> - Transfer choosed music folder to Android device.</li>
+            <li><strong>Log</strong> - Display command execution result/error.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. Suggestions</h2>
+        <p>When you enter the artist name and album name, the auto-completion candidate appears.</p>
+        <ul>
+            <li>Candidates are displayed in real time according to the input characters.</li>
+            <li>If the input is pasted, the suggestion will not be displayed.</li>
+            <li>When there is only one candidate, the input will be automatically confirmed.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. About music transfer</h2>
+        <p>
+            The <code>adb push</code> command is used for transfer. Copy the music folder of the selected artist album to the device.
+        </p>
+        <p>
+            If the transfer is successful, "✅ success" will be displayed, and if it fails, "⚠️ error" will be displayed in the output field.
+        </p>
+    </div>
+
+</body>
+</html>
