@@ -37,3 +37,6 @@
 "adb execution failed:" = "adb実行失敗: %@";
 "Choose installed ADB" = "ADB の場所を選択してください";
 "Choose" = "選択";
+"I'm working, Are you sure you want to quit now?" = "作動中です。本当に終了しますか？";
+"Working!!" = "作動中です！！";
+"Cancel" = "キャンセル";

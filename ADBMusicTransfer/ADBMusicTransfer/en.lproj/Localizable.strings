@@ -38,3 +38,6 @@
 "adb execution failed:" = "adb execution failed: %@";
 "Choose installed ADB" = "Choose installed ADB";
 "Choose" = "Choose";
+"I'm working, Are you sure you want to quit now?" = "I'm working, Are you sure you want to quit now?";
+"Working!!" = "Working!!";
+"Cancel" = "Cancel";

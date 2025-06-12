@@ -23,6 +23,8 @@ struct ContentView: View {
     @State private var output: String = ""
     @State private var selectedStorageType: StorageType = .sdCard
     
+    @EnvironmentObject var appDelegate: AppDelegate // AppDelegateの変数を使うための呪文
+    
     var body: some View {
         
         ScrollView {
@@ -154,6 +156,8 @@ struct ContentView: View {
     func transferMusic() {
         output = "" // 機能の呼び出しごとにログをクリア
         
+        appDelegate.workFlag = true // ワークフラグセット
+        
         /* 同梱はライセンス上問題があるので取り止め
          // 同梱adbパス取得
          guard let adbPath = Bundle.main.path(forResource: "adb", ofType: nil) else {
@@ -245,6 +249,7 @@ struct ContentView: View {
                 : NSLocalizedString("TransferSucceeded", comment: "Transfer succeeded with checkmark icon")
                 
                 output += "\n\(resultMessage)\n"
+                appDelegate.workFlag = false // ワークフラグ解除
             }
         }
     }

@@ -9,6 +9,8 @@ import Foundation
 import AppKit
 import SwiftUI
 
+var process = Process()
+
 // adb操作に関するクラス
 final class AdbManager: ObservableObject {
     
@@ -117,8 +119,8 @@ final class AdbManager: ObservableObject {
                 return
             }
             
-            let process = Process()
             let pipe = Pipe()
+            process = Process()
             process.executableURL = URL(fileURLWithPath: adbPath)
             process.arguments = arguments
             process.standardOutput = pipe
