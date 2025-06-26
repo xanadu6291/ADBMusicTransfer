@@ -31,7 +31,9 @@ struct AutoCompleteTextField: View {
                        $0.localizedCaseInsensitiveContains(text) && !$0.isEmpty
                    }
 
-            if showSuggestions && filteredSuggestions.count > 1 {
+            if showSuggestions &&
+               !filteredSuggestions.isEmpty &&
+               !(filteredSuggestions.count == 1 && filteredSuggestions.first == text) {
                 List {
                     ForEach(filteredSuggestions, id: \.self) { suggestion in
                         Text(suggestion)

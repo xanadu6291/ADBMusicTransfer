@@ -40,13 +40,23 @@ final class AdbManager: ObservableObject {
             adbPath = savedPath
         } else {
             
-            // 無ければ、これを呼び出す
-            detectAdbPath()
+            // 無ければ、detectAdbPath()を呼び出す
+            DispatchQueue.main.async {
+                self.detectAdbPath { path in
+                    if let path = path {
+                        self.adbPath = path
+                        self.isReady = true
+                    } else {
+                        self.adbPath = nil
+                        self.isReady = false
+                    }
+                }
+            }
         }
     }
     
     // whichを使ってadbパスを取得
-    private func detectAdbPath() {
+    func detectAdbPath(completion: @escaping (String?) -> Void) {
         DispatchQueue.global().async {
             let process = Process()
             let pipe = Pipe()
@@ -66,6 +76,7 @@ final class AdbManager: ObservableObject {
                 DispatchQueue.main.async {
                     self.adbPath = nil
                     self.isReady = false
+                    completion(nil)
                 }
                 return
             }
@@ -77,9 +88,11 @@ final class AdbManager: ObservableObject {
                 if let path = path, FileManager.default.isExecutableFile(atPath: path) {
                     self.adbPath = path
                     self.isReady = true
+                    completion(path)
                 } else {
                     self.adbPath = nil
                     self.isReady = false
+                    completion(nil)
                 }
             }
         }
@@ -141,6 +154,19 @@ final class AdbManager: ObservableObject {
             } catch {
                 completion(String(format: NSLocalizedString("adb execution failed: %@", comment: ""), error.localizedDescription))
             }
+        }
+    }
+    
+    // ラップ関数（adb devicesを実行）
+    func getConnectedDevices(completion: @escaping ([String]) -> Void) {
+        run(arguments: ["devices"]) { output in
+            let lines = output.components(separatedBy: "\n")
+            let devices = lines
+                .dropFirst() // 「List of devices attached」除去
+                .filter { $0.contains("\tdevice") && !$0.contains("unauthorized") }
+                .compactMap { $0.components(separatedBy: "\t").first }
+            
+            completion(devices)
         }
     }
 }

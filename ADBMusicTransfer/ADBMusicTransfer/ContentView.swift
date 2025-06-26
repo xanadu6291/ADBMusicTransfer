@@ -11,6 +11,8 @@ import AppKit
 
 struct ContentView: View {
     @EnvironmentObject var adbManager: AdbManager
+    @EnvironmentObject var appState: AppState
+    
     @State private var artist: String = ""
     @State private var allArtists: [String] = []
     @State private var artistSuggestions: [String] = []
@@ -50,12 +52,14 @@ struct ContentView: View {
                     }
                     
                     // ADB Devicesコマンドを実行するボタン
-                    Button("Button.Confirm ADB Devices") {
-                        adbManager.run(arguments: ["devices"]) { result in
-                            DispatchQueue.main.async {
-                                output += result
-                            }
-                        }
+                    Button("Button.Confirm Devices") {
+                        appState.checkDeviceConnection()
+                    }
+                    
+                    Button(action: {
+                        appState.reloadLibrary()
+                    }) {
+                        Label("Button.Update Library", systemImage: "arrow.clockwise")
                     }
                 }
                 
@@ -70,17 +74,20 @@ struct ContentView: View {
                 AutoCompleteTextField(
                     label: NSLocalizedString("TextField.Artist", comment: ""),
                     text: $artist,
-                    suggestions: artistSuggestions,
+                    suggestions: appState.libraryArtists,
                     showSuggestions: $showArtistSuggestions
                 ) {
                     
                 }
                 // ビューが準備できたら、すべてのアーティスト名を読み込む
                 .onAppear {
-                    if let musicPath = MusicLibraryUtil.resolveMusicLibraryMediaFolder() {
-                        allArtists = MusicLibraryUtil.loadArtistNames(from: musicPath)
+                    // if let musicPath = MusicLibraryUtil.resolveMusicLibraryMediaFolder() {
+                        // allArtists = MusicLibraryUtil.loadArtistNames(from: musicPath)
                         // print("All Artists: \(allArtists)")
-                    }
+                    // }
+                }
+                .task {
+                    appState.reloadLibrary()
                 }
                 .onChange(of: artist) {
                     showArtistSuggestions = !artist.isEmpty
@@ -141,6 +148,10 @@ struct ContentView: View {
                 }
                 .frame(maxHeight: 300)
             }
+            .onAppear {
+                // outputをAppStateにバインド
+                appState.outputBinding = $output
+            }
             .padding()
             
             // アプリ起動時にadbManager.adbPathをチェックし、それをログ(output)に反映
@@ -148,7 +159,7 @@ struct ContentView: View {
                 let resolved = path ?? NSLocalizedString("Unknown", comment: "")
                 output += String(format: NSLocalizedString("ADBPathLabel", comment: ""), resolved) + "\n"
             }
-        }.frame(height: 520) // 高さ固定で、リフローを防ぐ
+        }.frame(height: 535) // 高さ固定で、リフローを防ぐ
     }
     
     

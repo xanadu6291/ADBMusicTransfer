@@ -11,7 +11,7 @@
 "ADBPathLabel" = "以下のパスにADBが見つかりました:\n %@";
 "Unknown" = "不明";
 "Button.Select ADB manually" = "ADBを手動選択";
-"Button.Confirm ADB Devices" = "ADBの接続確認";
+"Button.Confirm Devices" = "デバイスの接続確認";
 "Picker.StorageType" = "音楽ファイルを転送するストレージタイプ:";
 "InternalStorage" = "内部ストレージ";
 "SDCard" = "SDカード";
@@ -40,3 +40,15 @@
 "I'm working, Are you sure you want to quit now?" = "作動中です。本当に終了しますか？";
 "Working!!" = "作動中です！！";
 "Cancel" = "キャンセル";
+"Button.Update Library" = "ライブラリを更新";
+"Menu.Operations" = "操作";
+"Buttton.Rescan ADB" = "ADBを再スキャン";
+"⚠️ outputBinding is not set" = "⚠️ outputBinding が未設定です";
+"🔁 Reload Library" = "🔁 ライブラリを読み込み中…";
+"⚠️ Music Library path not found" = "⚠️ Music ライブラリパスが見つかりません";
+"Artist count:" = "✅ アーティスト数: %@";
+"🔍 Rescan ADB…" = "🔍 ADBを再スキャン中…";
+"ADB found at:" = "✅ 以下のパスにADBが見つかりました:\n %@";
+"⚠️ ADB not found" = "⚠️ ADB が見つかりません";
+"📡 No device connected" = "📡 接続中のデバイスなし";
+"Connected devices:" = "📱 接続中のデバイス: %@";

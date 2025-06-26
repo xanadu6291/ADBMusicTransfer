@@ -11,6 +11,7 @@ import SwiftUI
 struct AdbMusicTransferApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var adbManager = AdbManager()
+    @StateObject private var appState = AppState()
     
     init() {
         // タブ（Tab）に関するメニューを無効化
@@ -21,8 +22,9 @@ struct AdbMusicTransferApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(adbManager)
-                .frame(minWidth: 500, idealWidth: 600, maxWidth: 700, minHeight: 520)
+                .frame(minWidth: 500, idealWidth: 600, maxWidth: 700, minHeight: 535)
                 .background(WindowAccessor()) // ウィンドウ取得用の裏技
+                .environmentObject(appState)
         }
         .commands {
             CommandGroup(replacing: .newItem) {
@@ -31,6 +33,21 @@ struct AdbMusicTransferApp: App {
             CommandGroup(replacing: .undoRedo) { } // 取り消す/やり直すメニューを無効化
             CommandGroup(replacing: .windowArrangement) { } // ウインドウメニューを無効化
             CommandGroup(replacing: .windowSize) { } // 拡大/縮小・しまうメニューを無効化
+            
+            // 「操作」メニューを追加
+            CommandMenu("Menu.Operations")  {
+                Button("Button.Update Library") {
+                    appState.reloadLibrary()
+                }
+                
+                Button("Buttton.Rescan ADB") {
+                    appState.rescanADB()
+                }
+                
+                Button("Button.Confirm Devices") {
+                    appState.checkDeviceConnection()
+                }
+            }
         }
     }
 }

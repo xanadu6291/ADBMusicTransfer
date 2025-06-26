@@ -11,7 +11,7 @@
 "ADBPathLabel" = "Found ADB in the follwing Path:\n %@";
 "Unknown" = "Unknown";
 "Button.Select ADB manually" = "Select ADB manually";
-"Button.Confirm ADB Devices" = "Confirm ADB Connection";
+"Button.Confirm Devices" = "Confirm Device Connection";
 "Picker.StorageType" = "Storage Type to transfer Music files:";
 "InternalStorage" = "InternalStorage";
 "SDCard" = "SDCard";
@@ -30,7 +30,6 @@
 "Souce:" = "Souce: %@";
 "Target:" = "Target: %@";
 "adb start failed:" = "adb start failed: %@";
-"TransferFailed" = "--- Transfer Failed ---";
 "TransferFailed" = "--- ⚠️ Transfer Failed ---";
 "TransferSucceeded" = "--- ✅ Transfer Succeeded ---";
 "Can't convert ADB output to string\n" = "Can't convert ADB output to string\n";
@@ -41,3 +40,15 @@
 "I'm working, Are you sure you want to quit now?" = "I'm working, Are you sure you want to quit now?";
 "Working!!" = "Working!!";
 "Cancel" = "Cancel";
+"Button.Update Library" = "Update Library";
+"Menu.Operations" = "Operations";
+"Buttton.Rescan ADB" = "Rescan ADB";
+"⚠️ outputBinding is not set" = "⚠️ outputBinding is not set";
+"🔁 Reload Library" = "🔁 Loading Library…";
+"⚠️ Music Library path not found" = "⚠️ Music Library path not found";
+"Artist count:" = "✅ Artist count: %@";
+"🔍 Rescan ADB…" = "🔍 Rescan ADB…";
+"ADB found at:" = "✅ ADB found at: %@";
+"⚠️ ADB not found" = "⚠️ ADB not found";
+"📡 No device connected" = "📡 No device connected";
+"Connected devices:" = "📱 Connected devices: %@";

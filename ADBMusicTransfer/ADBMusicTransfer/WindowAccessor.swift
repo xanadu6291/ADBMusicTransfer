@@ -12,7 +12,7 @@ struct WindowAccessor: NSViewRepresentable {
     func makeNSView(context: Context) -> NSView {
         DispatchQueue.main.async {
             if let window = NSApplication.shared.windows.first {
-                window.setContentSize(NSSize(width: 600, height: 520)) // 初期サイズここで設定！
+                window.setContentSize(NSSize(width: 600, height: 535)) // 初期サイズここで設定！
             }
         }
         return NSView()
