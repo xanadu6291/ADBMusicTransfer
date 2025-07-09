@@ -17,14 +17,14 @@ ADBMusicTransfer is a simple GUI app for macOS that transfers music files to And
 2. Clone this repository:
    ```bash
    git clone https://github.com/xanadu6291/ADBMusicTransfer.git
-   cd ADBMusicTransfer
+   cd ADBMusicTransfer```
 3. Open ADBMusicTransfer.xcodeproj
 4.	Build & run with Cmd + R!
 
 ## 🛠 Dependence
-	•	macOS 12.0+
-	•	ADB command line tool (must be installed)
-	•	[Android SDK Platform Tools](https://developer.android.com/studio/releases/platform-tools)
+1. macOS 12.0+
+2. ADB command line tool (must be installed)
+   [Android SDK Platform Tools](https://developer.android.com/studio/releases/platform-tools)
 
 ## 📄 License
 
