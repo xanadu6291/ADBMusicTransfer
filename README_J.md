@@ -18,14 +18,14 @@ MIT ライセンスのもと、オープンソースとして公開していま�
 2. 本リポジトリをクローン：
    ```bash
    git clone https://github.com/xanadu6291/ADBMusicTransfer.git
-   cd ADBMusicTransfer
+   cd ADBMusicTransfer```
 3. ADBMusicTransfer.xcodeproj を開く
 4.	Cmd + R でビルド＆実行！
 
 ## 🛠 依存
-	•	macOS 12.0+
-	•	ADB コマンドラインツール（インストールされている必要があります）
-	•	[Android SDK Platform Tools](https://developer.android.com/studio/releases/platform-tools)
+1. macOS 12.0+
+2. ADB コマンドラインツール（インストールされている必要があります）
+   [Android SDK Platform Tools](https://developer.android.com/studio/releases/platform-tools)
 
 ## 📄 ライセンス
 
